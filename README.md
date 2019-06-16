@@ -1,4 +1,4 @@
-# filesystem-manager
+# filesystem-traverser 
 
 ## Problem 1:
 Write a program that does the following:
