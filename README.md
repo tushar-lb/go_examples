@@ -27,7 +27,7 @@ Write another program that does the following:
 ## Guidelines:
 Since multiple POST requests may be received at the same time, care must be taken that the statistics are updated atomically (that is to say, the effects of one request should not be overridden by another one). The server must properly return errors when provided invalid inputs.
 
-## Packaging Soultions:
+## Packaging Soultions: Bonus++
 1. Modify the server so that the POST endpoint may accept both JSON and XML requests, depending on the
 client's choice.
 2. Write another program the continuously makes GET requests to the server (at a user-provided interval)
