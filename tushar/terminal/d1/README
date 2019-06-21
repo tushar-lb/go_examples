@@ -1,0 +1,43 @@
+Steps:
+
+1. In GOPATH, untar file tushar-test-solution.tar
+
+2. Enter into terminal directory : ex : GOPATH/github.com/tushar/terminal/
+   this directory contains
+    - Dockerfile - Build docker image for complete client-server solution
+    - file_server directory : This directory contains server related files
+    - file_client directory : This directory contains all client files as well as logic of file system traverse and post stats to server.
+
+3. Without docker:
+   - From the terminal/file_server directory run command :
+      - ``` go run main.go --port=<user-input-port> ```  : This command will start server on specified port
+
+   - From the another directory terminal/file_client run command:
+      - ``` go run main.go --port=<server_port> --addr=<server_ip_address> --path=<directory-path-for-traverse> ```
+
+      - The above command will traverse through input directory path and will return all files with stats.
+      - This will also post all the output/stats information to server using POST method.
+
+   - To check the stats which is posted by client to server:
+      - In browser open the ``` http://<server-addr>:<server:port>/stats ```
+      - Execute curl command with :  ``` curl http://<server-addr>:<server:port>/stats | jq . ```
+
+4. Build Docker image with client and server together:
+   - From the terminal directory run command :
+        - ``` docker build -t filesystem-test -f Dockerfile . ```
+
+        Once the image is build, check the image using command : ``` docker images | grep filesystem-test ```
+
+        - Run the above image using command:
+          docker run -d -p <server-host-port-for-client>:<server-container-port>  filesystem-test:latest
+
+        - Once container is started this will start the server by default but needs to run client from the container to collect and post file system stats.
+            - Use command :  ``` go run main.go --port=<server_port> --addr=<server_ip_address> --path=<directory-path-for-traverse> ``` to collect and post filesystem stats.
+
+- In the file_server directory created 2 files :
+    - Dockerfile.server : This is used to build regular docker image for server.
+
+    - Dockerfile.server.multistage : This is used to build optimized docker image for server.
+
+- To start server containers on user input port needs to provide it into Dockerfile before building image.
+

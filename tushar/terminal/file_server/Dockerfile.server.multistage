@@ -1,0 +1,30 @@
+# Start from golang v1.11 base image
+FROM golang:1.11 as builder
+
+# Add Maintainer Info
+LABEL maintainer="Tushar Raut<tusharraut444@gmail.com>"
+
+# Set the Current Working Directory inside the container
+WORKDIR $GOPATH/src/github.com/tushar/terminal/file_server
+
+# Copy everything from the current directory to the PWD(Present Working Directory) inside the container
+COPY . .
+
+# Download all the dependencies
+RUN go get -d -v ./...
+
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o /go/bin/server .
+
+######## Start a new stage from scratch #######
+FROM alpine:latest
+
+RUN apk --no-cache add ca-certificates
+
+WORKDIR /root/
+
+# Copy the Pre-built binary file from the previous stage
+COPY --from=builder /go/bin/ .
+
+EXPOSE 8000
+
+CMD ["./server"]

@@ -1,0 +1,92 @@
+commit 2da95c19dd25673400dc99168b5e9901f0c55662
+Author: Dinesh Israni <disrani@portworx.com>
+Date:   Thu Mar 7 19:06:00 2019 -0800
+
+    Add pxd volume options inline in the name
+
+commit e5e7ac6af5a3368471aeff0f902d333b24de0307
+Author: Dinesh Israni <disrani@portworx.com>
+Date:   Tue Nov 13 19:59:46 2018 -0800
+
+    Remove some more yarn references from the hdfs package
+
+commit 1bff88611234b5ca246e402ca062f985744e1ade
+Author: Dinesh Israni <disrani@portworx.com>
+Date:   Wed Oct 31 14:33:51 2018 -0700
+
+    Remove yarn tasks from hadoop framework and rename to hdfs
+
+commit 0f0b93f22a805be1388beba337bb1abd589e1d61
+Author: Dinesh Israni <disrani@portworx.com>
+Date:   Tue Jul 17 16:57:35 2018 -0700
+
+    Add config in hdfs to skip format and yarn nodes
+
+commit 34c6d50c94f83fd4231ee7f8325e6b57532a3ad2
+Author: Dinesh Israni <disrani@portworx.com>
+Date:   Thu Oct 11 15:20:43 2018 -0700
+
+    Use pre-reserved role if set for PX ports
+
+commit 5c3c6a753b660aa98742a7ed98da0be988ca9d50
+Author: Dinesh Israni <disrani@portworx.com>
+Date:   Tue Oct 2 18:41:25 2018 -0700
+
+    Add handling for shared volumes to use same volume name
+
+commit f5a6f389b23430a6ea92f48051df21bd0e0119b1
+Author: Dinesh Israni <disrani@portworx.com>
+Date:   Fri Sep 14 19:51:08 2018 -0700
+
+    Add additional tag to rack test so that it can be disabled
+
+commit 42d6343f66d322a14391118b22c8d04727c99180
+Author: Dinesh Israni <disrani@portworx.com>
+Date:   Fri Sep 14 19:44:29 2018 -0700
+
+    Update test package and service names
+
+commit e4a30fe87137c80a188fc5df31273fac516bf724
+Author: Dinesh Israni <disrani@portworx.com>
+Date:   Thu Aug 2 16:00:18 2018 -0700
+
+    Fix issue with same role being added multiple times
+
+commit 534aa065eff5b24de4a521172110025011d6dc82
+Author: Dinesh Israni <disrani@portworx.com>
+Date:   Thu Aug 2 16:00:49 2018 -0700
+
+    Allow passing in a pre-reserved role for portworx framework
+
+commit 01e9f9b52d0b0a27d4ce1fdc7f1db7642c9cda66
+Author: Dinesh Israni <disrani@portworx.com>
+Date:   Fri Sep 14 16:29:47 2018 -0700
+
+    Update portworx version to 1.5.1
+
+commit 0b9894d55d225298b02b1bbc28ba90ac1276ffb5
+Author: Dinesh Israni <disrani@portworx.com>
+Date:   Thu Sep 6 20:19:21 2018 -0700
+
+    Check placement constraints even when restarting tasks
+
+commit 2dcaef747fdf142df07723814c334402f4fa81ff
+Author: Dinesh Israni <disrani@portworx.com>
+Date:   Wed Aug 8 17:22:53 2018 -0700
+
+    Use sysCtl tool to manage systemd service
+
+commit 443853c3ee07056e8ba8722b9c20b6878b8f4eb0
+Author: Dinesh Israni <disrani@portworx.com>
+Date:   Thu Jul 12 20:11:51 2018 -0700
+
+    Add a dummy pod with gpu resources for portworx framework
+    
+    THis allows portworx to be installed on nodes with gpu resources
+    if the 'gpus_are_scarce' flag is set in the cluster
+
+commit e8436058074c0a466c8ab122bf24c6408d0ab96b
+Author: Dinesh Israni <disrani@portworx.com>
+Date:   Thu Jul 12 20:15:09 2018 -0700
+
+    Update sudo for travis build
