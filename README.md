@@ -1,4 +1,4 @@
-# filesystem-traverser 
+# filesystem-traversel
 
 ## Problem 1:
 Write a program that does the following:
