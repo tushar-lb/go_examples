@@ -14,7 +14,6 @@ const (
 	packageManagerExecutable = "kubectl"
 )
 
-// main start a gRPC server and waits for connection
 func main() {
 	cmdStr := "kubectl --kubeconfig px3.yaml apply -f service_account.yaml -n test"
 	logrus.Printf("Command : [%s]", cmdStr)
